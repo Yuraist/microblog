@@ -1,9 +1,9 @@
-#Microblog
+# Microblog
 **_Microblog_** is a web application written using the Flask framework.
 An idea is the website like Twitter. You can register and login, write posts, follow and read other users. 
 You can also edit your profile adding description and avatar. 
 
-##How to use
+## How to use
 To start with **_Microblog_** you should install all requirements which stored in _requirements.txt_ file.
 
 ```pip install requirements.txt```
