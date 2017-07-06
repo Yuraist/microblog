@@ -7,7 +7,6 @@ from app.forms import MyLoginForm, MyRegisterForm, EditForm, PostForm
 from flask_security import login_required, login_user, current_user
 from flask_security.utils import verify_password, hash_password
 from app.models import User, Post, user_datastore
-from werkzeug.utils import secure_filename
 from datetime import datetime
 from app import app, db
 
