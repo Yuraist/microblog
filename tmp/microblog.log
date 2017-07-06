@@ -1,0 +1,20 @@
+2017-07-05 20:21:17,642 INFO: microblog startup [in /Users/Yuraist/Desktop/Code/Python/microblog/microblog/app/__init__.py:24]
+2017-07-05 20:22:28,279 INFO: microblog startup [in /Users/Yuraist/Desktop/Code/Python/microblog/microblog/app/__init__.py:24]
+2017-07-05 20:25:21,813 INFO: microblog startup [in /Users/Yuraist/Desktop/Code/Python/microblog/microblog/app/__init__.py:24]
+2017-07-05 20:25:48,679 ERROR: Exception on /signup [POST] [in /Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Yuraist/Desktop/Code/Python/microblog/microblog/app/views.py", line 94, in register
+    user_datastore.create_user(user_data)
+TypeError: create_user() takes 1 positional argument but 2 were given

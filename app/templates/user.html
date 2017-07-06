@@ -1,0 +1,41 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+  <table>
+    <tr valign="top">
+      <td>
+        <h1>User: {{ user.username }}</h1>
+        <!-- ABOUT THE USER -->
+        {% if user.about_me %}
+          <p>{{ user.about_me }}</p>
+        {% endif %}
+        <!-- LAST SEEN -->
+        {% if user.last_seen %}
+          <p>Last seen on: <i>{{ user.last_seen }}</i></p>
+        {% endif %}
+        <!-- EDIT THE INFO -->
+        {% if user.id == g.user.id %}
+          <p><a href="{{ url_for('edit') }}">Edit</a></p>
+        {% elif not g.user.is_following(user) %}
+          <a href="{{ url_for('follow', username=user.username) }}">Follow</a>
+        {% else %}
+          <a href="{{ url_for('unfollow', username=user.username) }}">Unfollow</a>
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+  <hr>
+  {% for post in posts.items %}
+    {% include 'post.html' %}
+  {% endfor %}
+  {% if posts.has_prev %}
+    <a href="{{ url_for('detail_user', username=user.username, page=posts.prev_num) }}"><< Newer posts</a>
+  {% else %}
+    << Newer posts
+  {% endif %}
+  {% if posts.has_next %}
+    <a href="{{ url_for('detail_user', username=user.username, page=posts.next_num) }}">Older posts >></a>
+  {% else %}
+    Older posts >>
+  {% endif %}
+{% endblock %}

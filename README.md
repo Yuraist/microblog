@@ -1,0 +1,1 @@
+Microblog is a web application written using the Flask microframework.

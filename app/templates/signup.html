@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+  <h1>Sign Up</h1>
+  <form action="" method="post" name="login">
+  {{ form.hidden_tag() }}
+  <p>
+  {% if error %}
+    <span style="color: red;">[{{ error }}]</span><br>
+  {% endif %}
+    Please enter your username:<br>
+    {{ form.username(size=80) }}<br>
+    Please enter your email:<br>
+    {{ form.email(size=80) }}<br>
+    Please enter your password:<br>
+    {{ form.password(size=80) }}<br>
+    Please repeat your username:<br>
+    {{ form.password2(size=80) }}<br>
+    {% for error in form.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br>
+  </p>
+  <p><input type="submit" value="Sign In"></p>
+  </form>
+{% endblock %}
